@@ -1,0 +1,98 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="rss_feed.css">
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var base_url_t='https://newsapi.org/v1/articles?source=hacker-news&sortBy=latest&apiKey=f76904152bf944798a8a79a3be817402'
+			var base_url_b='https://newsapi.org/v1/articles?source=business-insider&sortBy=latest&apiKey=f76904152bf944798a8a79a3be817402'
+			var base_url_s='https://newsapi.org/v1/articles?source=espn&sortBy=top&apiKey=f76904152bf944798a8a79a3be817402'
+			var base_url_sc='https://newsapi.org/v1/articles?source=national-geographic&sortBy=top&apiKey=f76904152bf944798a8a79a3be817402'
+			var base_url_p='https://newsapi.org/v1/articles?source=cnn&sortBy=top&apiKey=f76904152bf944798a8a79a3be817402'
+			var base_url_tv='https://newsapi.org/v1/articles?source=entertainment-weekly&sortBy=top&apiKey=f76904152bf944798a8a79a3be817402'
+
+
+
+
+			$.get(base_url_t, function(res){
+				$(".tech").click(function(){
+					$('.wrapper').html("")
+					for(var i = 0; i < res.articles.length; i++){
+						$('.wrapper').append('<h2>' + res.articles[i].title + '</h2>');
+						$('.wrapper').append('<p>' + res.articles[i].description + '</p>');
+						$('.wrapper').append('<a href=' + '"' + res.articles[i].url +'"' + '>' + "Click Here For Article" + '</a>');
+				};
+			});
+			},'json');
+		$.get(base_url_p, function(res){
+			$(".pol").click(function(){
+				$('.wrapper').html("")
+				for(var i = 0; i < res.articles.length; i++){
+					$('.wrapper').append('<h2>' + res.articles[i].title + '</h2>');
+					$('.wrapper').append('<p>' + res.articles[i].description + '</p>');
+					$('.wrapper').append('<a href=' + '"' + res.articles[i].url +'"' + '>' + "Click Here For Article" + '</a>');
+			};
+		});
+		},'json');
+	$.get(base_url_s, function(res){
+		$(".sprt").click(function(){
+			$('.wrapper').html("")
+			for(var i = 0; i < res.articles.length; i++){
+				$('.wrapper').append('<h2>' + res.articles[i].title + '</h2>');
+				$('.wrapper').append('<p>' + res.articles[i].description + '</p>');
+				$('.wrapper').append('<a href=' + '"' + res.articles[i].url +'"' + '>' + "Click Here For Article" + '</a>');
+			};
+		});
+	},'json');
+	$.get(base_url_sc, function(res){
+		$(".sci").click(function(){
+			$('.wrapper').html("")
+			for(var i = 0; i < res.articles.length; i++){
+				$('.wrapper').append('<h2>' + res.articles[i].title + '</h2>');
+				$('.wrapper').append('<p>' + res.articles[i].description + '</p>');
+				$('.wrapper').append('<a href=' + '"' + res.articles[i].url +'"' + '>' + "Click Here For Article" + '</a>');
+			};
+		});
+},'json');
+$.get(base_url_p, function(res){
+$(".bus").click(function(){
+	$('.wrapper').html("")
+	for(var i = 0; i < res.articles.length; i++){
+		$('.wrapper').append('<h2>' + res.articles[i].title + '</h2>');
+		$('.wrapper').append('<p>' + res.articles[i].description + '</p>');
+		$('.wrapper').append('<a href=' + '"' + res.articles[i].url +'"' + '>' + "Click Here For Article" + '</a>');
+		};
+	});
+},'json');
+$.get(base_url_tv, function(res){
+$(".tv").click(function(){
+	$('.wrapper').html("")
+	for(var i = 0; i < res.articles.length; i++){
+		$('.wrapper').append('<h2>' + res.articles[i].title + '</h2>');
+		$('.wrapper').append('<p>' + res.articles[i].description + '</p>');
+		$('.wrapper').append('<a href=' + '"' + res.articles[i].url +'"' + '>' + "Click Here For Article" + '</a>');
+		};
+	});
+},'json');
+
+	});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="top_bar">
+				<h1 class="tech">Tech</h1>
+				<h1 class="pol">Politics</h1>
+				<h1 class="sprt">Sports</h1>
+				<h1 class="sci">Science</h1>
+				<h1 class="bus">Business</h1>
+				<h1 class="tv">Media</h1>
+			</div>
+			<div class="wrapper">
+
+			</div>
+		</div>
+	</body>
+	</html>
